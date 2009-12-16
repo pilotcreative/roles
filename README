@@ -1,0 +1,27 @@
+Roles
+=====
+
+Simple roles system.
+
+Migrations
+=====
+
+  create_table :roles do |t|
+    t.string :name
+  end
+  Role.create(:name => "administrator")
+
+
+  create_table :privileges, :id => false do |t|
+    t.integer :user_id
+    t.integer :role_id
+  end
+
+
+Example
+=======
+
+Look at the tests
+
+
+Copyright (c) 2008 [name of plugin creator], released under the MIT license

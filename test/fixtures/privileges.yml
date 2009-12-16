@@ -1,0 +1,13 @@
+john_administrator:
+  user_id: 1
+  role_id: 1
+kate_moderator:
+  user_id: 2
+  role_id: 2
+kate_uploader:
+  user_id: 2
+  role_id: 4
+mary_editor:
+  user_id: 3
+  role_id: 3
+  

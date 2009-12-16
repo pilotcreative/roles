@@ -1,0 +1,13 @@
+administrator:
+  id: 1
+  name: administrator
+moderator:
+  id: 2
+  name: moderator
+editor:
+  id: 3
+  name: editor
+uploader:
+  id: 4
+  name: uploader
+  
