@@ -56,6 +56,7 @@ class UserTest < ActiveSupport::TestCase
 
       should "find_with_role method" do
         User.find_with_role(:moderator, :uploader, :administrator).size.should == 2
+        User.find_with_role(:moderator).size.should == 1
       end
     end
   end

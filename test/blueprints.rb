@@ -8,9 +8,9 @@ Sham.define do
 end
 
 User.blueprint do
-  login
+  login { Sham.login }
 end
 
 Role.blueprint do
-  name
+  name { Sham.name }
 end
