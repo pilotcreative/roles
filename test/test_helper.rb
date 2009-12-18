@@ -1,27 +1,28 @@
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 
-require 'rubygems'
+ENV["RAILS_ENV"] = "test"
+require File.expand_path(File.dirname(__FILE__) + "/config/environment")
+
 require 'test/unit'
+require 'rubygems'
 require 'active_record'
-require 'active_record/fixtures'
+require 'active_support'
 require "#{File.dirname(__FILE__)}/../lib/role"
 require "#{File.dirname(__FILE__)}/../lib/active_record/aggregations/has_roles"
 
-config = YAML::load(IO.read(File.dirname(__FILE__) + '/database.yml'))
-ActiveRecord::Base.logger = Logger.new(File.dirname(__FILE__) + "/debug.log")
-ActiveRecord::Base.establish_connection(config['sqlite3_memory'])
 load(File.dirname(__FILE__) + "/schema.rb")
-Test::Unit::TestCase.fixture_path = File.dirname(__FILE__) + "/fixtures"
-$LOAD_PATH.unshift(Test::Unit::TestCase.fixture_path)
 
 ActiveRecord::Base.send(:include, ActiveRecord::Aggregations::HasRoles)
 
 require 'action_filters'
+require 'test/models/user'
 
-class Test::Unit::TestCase
-  self.use_transactional_fixtures = true
-  self.use_instantiated_fixtures  = false
-  Fixtures.create_fixtures(Test::Unit::TestCase.fixture_path, %w(roles users privileges))
+require File.expand_path(File.dirname(__FILE__) + "/blueprints")
+require 'mocha'
+require 'shoulda'
+require 'matchy'
+
+class ActiveSupport::TestCase
+  setup { Sham.reset }
 end
 
-require 'test/models/user'
