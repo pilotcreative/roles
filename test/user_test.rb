@@ -1,18 +1,18 @@
 require File.dirname(__FILE__) + '/test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  context "User model" do
+  context "User" do
     setup do
       #sham.reset doesn't work
-      @admin = Role.find_by_name('administrator') ? Role.find_by_name('administrator') : Role.make(:name => 'administrator')
-      @moderator = Role.find_by_name('moderator') ? Role.find_by_name('moderator') : Role.make(:name => 'moderator')
-      @uploader = Role.find_by_name('uploader') ? Role.find_by_name('uploader') : Role.make(:name => 'uploader')
-      @editor = Role.find_by_name('editor') ? Role.find_by_name('editor') : Role.make(:name => 'editor')
-      @john = User.find_by_login('John') ? User.find_by_login('John') : User.make(:login => 'John')
-      @kate = User.find_by_login('Kate') ? User.find_by_login('Kate') : User.make(:login => 'Kate')
+      @admin = Role.find_by_name('administrator') 
+      @moderator = Role.find_by_name('moderator') 
+      @uploader = Role.find_by_name('uploader') 
+      @editor = Role.find_by_name('editor')
+      @john = User.find_by_login('John') || User.make(:login => 'John')
+      @kate = User.find_by_login('Kate') || User.make(:login => 'Kate')
     end
 
-    context "User" do
+    context "User model" do
       setup do
         @john.roles << @admin
         @kate.roles = [@moderator, @uploader]
@@ -40,18 +40,13 @@ class UserTest < ActiveSupport::TestCase
       end
 
       should "generating methods" do
-        #@john.respond_to?(:administrator?).should == true
-        #@john.administrator?.should == true
-        #@john.uploader?.should == false
+        @john.respond_to?(:administrator?).should == true
+        @john.administrator?.should == true
+        @john.uploader?.should == true
 
-        #kate = User.find_by_login("Kate")
-        #assert !kate.administrator?
-        #assert kate.moderator?
-        #assert kate.uploader?
-
-        #mary = User.find_by_login("Mary Jackson")
-        #assert mary.editor?
-        #assert !mary.administrator?
+        @kate.administrator?.should_not == true
+        @kate.moderator?.should == true
+        @kate.uploader?.should == true
       end
 
       should "find_with_role method" do

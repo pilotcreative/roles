@@ -4,12 +4,12 @@ class RoleTest < ActiveSupport::TestCase
   context "Role" do
     setup do
       #sham.reset doesn't work
-      @admin = Role.find_by_name('administrator') ? Role.find_by_name('administrator') : Role.make(:name => 'administrator')
-      @moderator = Role.find_by_name('moderator') ? Role.find_by_name('moderator') : Role.make(:name => 'moderator')
-      @uploader = Role.find_by_name('uploader') ? Role.find_by_name('uploader') : Role.make(:name => 'uploader')
-      @editor = Role.find_by_name('editor') ? Role.find_by_name('editor') : Role.make(:name => 'editor')
-      @john = User.find_by_login('John') ? User.find_by_login('John') : User.make(:login => 'John')
-      @kate = User.find_by_login('Kate') ? User.find_by_login('Kate') : User.make(:login => 'Kate')
+      @admin = Role.find_by_name('administrator')
+      @moderator = Role.find_by_name('moderator')
+      @uploader = Role.find_by_name('uploader')
+      @editor = Role.find_by_name('editor')
+      @john = User.find_by_login('John') || User.make(:login => 'John')
+      @kate = User.find_by_login('Kate') || User.make(:login => 'Kate')
     end
     context "Role model" do
       setup do
