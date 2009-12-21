@@ -18,10 +18,22 @@ Migrations
   end
 
 
-Example
+Examples
 =======
 
-Look at the tests
+Available methods if administrator role has been created: 
+    user.administrator? 
+    user.is?(:administrator)
+    user.is_not?(:administrator)
+
+Add more roles in the migration: moderator, uploader etc.
+    user.moderator?
+    user.is?(:uploader)
+
+Find all users with moderator role
+    User.find_with_role(:moderator)
+or
+    Role[:moderator].users
 
 
 Copyright (c) 2008 [name of plugin creator], released under the MIT license
