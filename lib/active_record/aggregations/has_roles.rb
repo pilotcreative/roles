@@ -47,7 +47,7 @@ module ActiveRecord
         #  - when user has administrator role
         #  - when user has one of the supplied roles
         def is?(*role_names)
-          roles = Rails.cache.fetch("/#{self.class.to_s.tableize}/#{id}/roles") { self.roles.map }
+          # roles = Rails.cache.fetch("/#{self.class.to_s.tableize}/#{id}/roles") { self.roles.map }
           return true if roles.include?(Role[:administrator])
           Array(role_names).any? { |name| roles.include?(Role[name]) }
         end
