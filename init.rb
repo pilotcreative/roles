@@ -1,1 +1,1 @@
-require "roles"
+require "rails/init"
