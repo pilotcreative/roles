@@ -1,3 +1,3 @@
 require "role"
 require "action_filters"
-require "active_record/has_roles"
+require "active_record/aggregations/has_roles"
