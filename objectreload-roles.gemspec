@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{objectreload-roles}
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mariusz Pietrzyk", "Mateusz Drozdzynski"]
-  s.date = %q{2010-01-12}
+  s.date = %q{2010-03-24}
   s.email = %q{gems@objectreload.com}
   s.extra_rdoc_files = [
     "README"
@@ -26,6 +26,8 @@ Gem::Specification.new do |s|
      "lib/active_record/aggregations/has_roles.rb",
      "lib/role.rb",
      "lib/roles.rb",
+     "objectreload-roles.gemspec",
+     "rails/init.rb",
      "tasks/roles_tasks.rake",
      "test/blueprints.rb",
      "test/config/boot.rb",
@@ -43,7 +45,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/objectreload/roles}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Simple way to create roles for users.}
   s.test_files = [
     "test/blueprints.rb",
