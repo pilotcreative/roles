@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mariusz Pietrzyk", "Mateusz Drozdzynski"]
-  s.date = %q{2010-03-24}
+  s.date = %q{2010-07-22}
   s.email = %q{gems@objectreload.com}
   s.extra_rdoc_files = [
     "README"
@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
      "VERSION",
      "init.rb",
      "install.rb",
-     "lib/action_filters.rb",
      "lib/active_record/aggregations/has_roles.rb",
      "lib/role.rb",
      "lib/roles.rb",
@@ -45,7 +44,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/objectreload/roles}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Simple way to create roles for users.}
   s.test_files = [
     "test/blueprints.rb",
@@ -64,7 +63,7 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
     else
     end
   else
