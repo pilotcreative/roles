@@ -23,7 +23,7 @@ module ActiveRecord
           end
 
           Role.instance_eval <<-TXT
-            has_and_belongs_to_many :#{class_name.downcase.pluralize}, :join_table => :#{read_inheritable_attribute(:privileges_table_name)}, :uniq => true
+            has_and_belongs_to_many :#{name.downcase.pluralize}, :join_table => :#{read_inheritable_attribute(:privileges_table_name)}, :uniq => true
           TXT
         end
       end
@@ -61,3 +61,5 @@ module ActiveRecord
     end
   end
 end
+
+ActiveRecord::Base.send(:include, ActiveRecord::Aggregations::HasRoles)

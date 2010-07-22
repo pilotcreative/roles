@@ -1,1 +1,1 @@
-require "rails/init"
+require "rails/init""
