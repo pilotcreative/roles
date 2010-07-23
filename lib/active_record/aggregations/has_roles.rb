@@ -31,7 +31,7 @@ module ActiveRecord
       module ClassMethods
         def self.extended(base)
           Role.all.each do |role|
-            base.named_scope role.to_s.pluralize.to_sym, :include => :roles, :conditions => ["roles.id = ?", role.id]
+            base.scope role.to_s.pluralize.to_sym, :include => :roles, :conditions => ["roles.id = ?", role.id]
           end
         end
 
