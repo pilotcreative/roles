@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mariusz Pietrzyk", "Mateusz Drozdzynski"]
-  s.date = %q{2010-07-25}
+  s.date = %q{2010-07-29}
   s.email = %q{gems@objectreload.com}
   s.extra_rdoc_files = [
     "README"
@@ -20,13 +20,10 @@ Gem::Specification.new do |s|
      "README",
      "Rakefile",
      "VERSION",
-     "init.rb",
-     "install.rb",
-     "lib/active_record/aggregations/has_roles.rb",
+     "lib/action_controller/require_role.rb",
      "lib/role.rb",
      "lib/roles.rb",
      "objectreload-roles.gemspec",
-     "tasks/roles_tasks.rake",
      "test/blueprints.rb",
      "test/config/boot.rb",
      "test/config/database.yml",
