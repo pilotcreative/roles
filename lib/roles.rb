@@ -6,12 +6,12 @@ module Roles
   extend ActiveSupport::Concern
 
   included do
-    return unless Role.table_exists?
+    if Role.table_exists?
+      has_and_belongs_to_many :roles, :join_table => :privileges, :uniq => true
 
-    has_and_belongs_to_many :roles, :join_table => :privileges, :uniq => true
-
-    Role.all.each do |role|
-      scope role.to_s.pluralize.to_sym, :include => :roles, :conditions => ["roles.id = ?", role.id]
+      Role.all.each do |role|
+        scope role.to_s.pluralize.to_sym, :include => :roles, :conditions => ["roles.id = ?", role.id]
+      end
     end
   end
 
