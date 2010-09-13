@@ -1,0 +1,3 @@
+module Roles
+  # Your code goes here...
+end
