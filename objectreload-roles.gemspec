@@ -2,7 +2,7 @@
 require File.expand_path("../lib/version", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name        = "roles"
+  s.name        = "objectreload-roles"
   s.version     = Roles::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Mariusz Pietrzyk", "Mateusz Drożdżyński"]
